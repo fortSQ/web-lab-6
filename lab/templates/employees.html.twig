@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <h1>{{ status == 'active' ? 'Работают' : 'Уволенные' }}</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+        </tr>
+        </thead>
+        <tbody>
+        {# выводим весь список сотрудников #}
+        {% for employee in employees %}
+            <tr>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

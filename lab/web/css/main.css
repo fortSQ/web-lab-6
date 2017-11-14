@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+}
+
+table td {
+    border-top: 1px solid black;
+}

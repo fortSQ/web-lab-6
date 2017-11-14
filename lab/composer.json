@@ -1,6 +1,6 @@
 {
-    "name": "fabpot/silex-skeleton",
-    "description": "A pre-configured skeleton for the Silex microframework",
+    "name": "fortsq/web-lab-6",
+    "description": "Development of server-side web applications. Laboratory work #6",
     "license": "MIT",
     "type": "project",
     "require": {
@@ -21,7 +21,8 @@
         "symfony/security": "~2.8|^3.0",
         "symfony/translation": "~2.8|^3.0",
         "symfony/twig-bridge": "~2.8|^3.0",
-        "symfony/validator": "~2.8|^3.0"
+        "symfony/validator": "~2.8|^3.0",
+        "doctrine/dbal": "~2.2"
     },
     "autoload": {
         "psr-0": { "": "src/" }

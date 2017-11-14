@@ -14,6 +14,19 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+$app->get('/employee/{status}', function ($status) use ($app) {
+    $sql = 'SELECT * FROM employee WHERE status = ?';
+    $employeeList = $app['db']->fetchAll($sql, [$status]);
+
+    return $app['twig']->render('employees.html.twig', [
+        'status'    => $status,
+        'employees' => $employeeList,
+    ]);
+})
+->assert('status', 'active|inactive') # допустимые значения для статуса
+->value('status', 'active') # статус по умолчанию, когда сам GET-параметр не задан
+;
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
